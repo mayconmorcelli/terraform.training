@@ -1,9 +1,6 @@
 resource "aws_s3_bucket" "b" {
-  bucket_prefix = "my-tf-test-bucket-"
+  bucket_prefix = var.bucket_prefix
   acl    = var.acl
 
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
+  tags = var.tags
 }
